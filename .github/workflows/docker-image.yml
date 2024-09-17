@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        app: [reverseproxy, udagram-api-user, udagram-api-feed, udagram-frontend]
+        app: [udagram-reverseproxy, udagram-api-user, udagram-api-feed, udagram-frontend]
 
     steps:
     - name: Checkout repository
