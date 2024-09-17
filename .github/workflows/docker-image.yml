@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         app: [udagram-reverseproxy, udagram-api-user, udagram-api-feed, udagram-frontend]
+        image_name: [reverseproxy, udagram-api-user, udagram-api-feed, udagram-frontend]
 
     steps:
     - name: Checkout repository
@@ -28,5 +29,5 @@ jobs:
       run: |
         echo "Building and pushing Docker image for ${{ matrix.app }}"
         cd ${{ matrix.app }} # Navigate to the app directory
-        docker build -t lcd1502/${{ matrix.app }}:latest . # Build with the 'latest' tag
-        docker push lcd1502/${{ matrix.app }}:latest # Push to DockerHub
+        docker build -t lcd1502/${{ matrix.image_name }}:latest . # Build with the correct image name and 'latest' tag
+        docker push lcd1502/${{ matrix.image_name }}:latest # Push to DockerHub
