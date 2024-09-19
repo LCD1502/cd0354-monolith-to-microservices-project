@@ -17,7 +17,11 @@ spec:
       containers:
       - image: lcd1502/udagram-api-feed
         name: backend-feed
-        imagePullPolicy: Always                    
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"                     
         env:
         - name: URL
           valueFrom:

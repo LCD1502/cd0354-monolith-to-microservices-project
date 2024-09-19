@@ -18,7 +18,14 @@ spec:
       containers:
       - image: lcd1502/udagram-frontend:v6
         name: frontend
-        imagePullPolicy: Always          
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"           
         ports:
         - containerPort: 80
       restartPolicy: Always
